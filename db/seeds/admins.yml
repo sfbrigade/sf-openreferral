@@ -1,0 +1,4 @@
+---
+- :email: steve@example.com
+  :password: badpassword
+  :password_confirmation: badpassword
