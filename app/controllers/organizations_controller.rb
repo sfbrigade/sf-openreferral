@@ -31,9 +31,13 @@ class OrganizationsController < ApplicationController
 
   def update
     if @organization.update(organization_params)
-      redirect_to @organization, notice: t(".success")
+      if organization_params[:status] == "approved"
+        redirect_to "/pending", notice: "#{@organization.name} was approved"
+      else
+        redirect_to @organization, notice: t(".success")
+      end
     else
-      render :edit
+        render :edit
     end
   end
 
@@ -56,6 +60,7 @@ class OrganizationsController < ApplicationController
       :name,
       :phone,
       :url,
+      :status
     )
   end
 end
