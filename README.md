@@ -1,4 +1,26 @@
-# Sf-openreferral
+# SF Social Services Open Referral
+
+SF Open Referral is working
+with the San Francisco Adult Probation Department (APD)
+to collect, maintain, and publish
+information about social services in San Francisco.
+
+## Contributing
+
+Before contributing, please read our [wiki]
+to understand the needs, background, and context of the project.
+
+Please see the [CONTRIBUTING] document for specifics about
+submitting contributions through GitHub.
+
+Once you've done that, contact [project management] or [engineering]
+to find out where your contribution will be most helpful.
+
+Thanks for your contributions!
+
+[wiki]: https://github.com/sfbrigade/sf-openreferral/wiki
+[project management]: https://github.com/aprilsteed
+[engineering]: https://github.com/graysonwright
 
 ## Getting Started
 
