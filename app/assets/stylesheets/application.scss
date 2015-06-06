@@ -8,10 +8,7 @@
 
 @import "layout";
 
-/* 
-  Variables
-*/
-
+// Variables
 $black: #000;
 $grey: #ddd;
 
@@ -21,22 +18,21 @@ $notice: #000;
 $success: #2adc55;
 
 .nav {
-
-  .menu {
-    @include outer-container(68em);
-    list-style-type: none;
-
-    .menu-link {
-      @include span-columns(2);
-
-      font-size: 1.3em;
-      font-weight: bold;
-      margin: 0.5em 0;    
-    }   
-  }
-
   border-bottom: solid 1px $grey;
-  box-shadow: 0px 0px 1px $black;
+  box-shadow: 0 0 1px $black;
+}
+
+.menu {
+  @include outer-container(68em);
+  list-style-type: none;
+
+  .menu-link {
+    @include span-columns(2);
+
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 0.5em 0;    
+  }   
 }
 
 .flashes {
@@ -62,8 +58,8 @@ $success: #2adc55;
   .flash-error,
   .flash-notice,
   .flash-success {
-    padding: 0.5em;
     border-radius: 2px;
     margin: 0.5em 0;
+    padding: 0.5em;
   }
  }
