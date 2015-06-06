@@ -1,3 +1,7 @@
 .content {
-  @include outer-container;
+  @include outer-container(68em);
+
+  .high_voltage-pages {
+    @include outer-container(100%);
+  }
 }
