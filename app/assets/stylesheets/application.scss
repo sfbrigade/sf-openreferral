@@ -8,50 +8,56 @@
 
 @import "layout";
 
-div.nav {
+// variables
+$alert: #de1b31;
+$error: #de1b31;
+$notice: #000;
+$success: #2adc55;
 
-	ul.menu {
-		@include outer-container(68em);
-		list-style-type: none;
+.nav {
 
-		li.menu-link {
-			@include span-columns(2);
+    .menu {
+        @include outer-container(68em);
+        list-style-type: none;
 
-			font-size: 1.3em;
-			font-weight: bold;
-			margin: 0.5em 0;	
-		}	
-	}
+        .menu-link {
+            @include span-columns(2);
 
-	border-bottom: solid 1px #ddd;
-	box-shadow: 0px 0px 1px #000;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin: 0.5em 0;    
+        }   
+    }
+
+    border-bottom: solid 1px #ddd;
+    box-shadow: 0px 0px 1px #000;
 }
 
 .flashes {
-	@include outer-container(68em);
+    @include outer-container(68em);
 
-	.flash-alert {
-		border: solid 1px #de1b31;
-	}
+    .flash-alert {
+        border: solid 1px $alert;
+    }
 
-	.flash-error {
-		border: solid 1px #de1b31;
-	}
+    .flash-error {
+        border: solid 1px $error;
+    }
 
-	.flash-notice {
-		border: solid 1px #000;
-	}
+    .flash-notice {
+        border: solid 1px $notice;
+    }
 
-	.flash-success {
-		border: solid 1px #2adc55;
-	}
+    .flash-success {
+        border: solid 1px $success;
+    }
 
-	.flash-alert,
-	.flash-error,
-	.flash-notice,
-	.flash-success {
-		padding: 0.5em;
-		border-radius: 2px;
-		margin: 0.5em 0;
-	}
+    .flash-alert,
+    .flash-error,
+    .flash-notice,
+    .flash-success {
+        padding: 0.5em;
+        border-radius: 2px;
+        margin: 0.5em 0;
+    }
  }
