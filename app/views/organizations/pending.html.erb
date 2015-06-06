@@ -7,14 +7,14 @@
     <tr>
       <th>Name</th>
       <th>Validation Errors</th>
-      <th colspan="4"></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @organizations.each do |organization| %>
       <tr>
-        <td><%= link_to organization.name, edit_organization_path(organization) %></td>
+        <td><%= link_to organization.name, organization %></td>
 
         <td>
         <% organization.valid? %>
@@ -23,7 +23,6 @@
         <% end %>
 
         </td>
-        <td><%= link_to 'Show', organization %></td>
         <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
         <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to "Approve", organization_path(organization, organization: { status: 'approved' }), :method => :put %></td>

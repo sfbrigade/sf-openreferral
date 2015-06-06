@@ -28,5 +28,11 @@
   <%= @organization.url %>
 </p>
 
-<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Edit', edit_organization_path(@organization) %>
 <%= link_to 'Back', organizations_path %>
+
+<% if @organization.status == 'pending' %>
+  <%= link_to 'Approve', organization_path(@organization, organization: { status: 'approved' }), :method => :put %>
+<% else %>
+  <%= link_to 'Unapprove', organization_path(@organization, organization: { status: 'approved' }), :method => :put %>
+<% end %>
