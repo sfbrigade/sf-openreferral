@@ -2,8 +2,6 @@
 
 //Sort all tables by header row
 $('.sortable th').click(function(){
-
-
     var $table = $(this).parents('table').eq(0);
     var rows = $table.find("tr:not(:has('th'))").toArray();
     rows.sort(comparer($(this).index()));

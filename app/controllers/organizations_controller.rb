@@ -37,7 +37,7 @@ class OrganizationsController < ApplicationController
         redirect_to @organization, notice: t(".success")
       end
     else
-        render :edit
+      render :edit
     end
   end
 
@@ -60,7 +60,7 @@ class OrganizationsController < ApplicationController
       :name,
       :phone,
       :url,
-      :status
+      :status,
     )
   end
 end
