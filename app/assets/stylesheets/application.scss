@@ -7,3 +7,51 @@
 @import "base/base";
 
 @import "layout";
+
+div.nav {
+
+	ul.menu {
+		@include outer-container(68em);
+		list-style-type: none;
+
+		li.menu-link {
+			@include span-columns(2);
+
+			font-size: 1.3em;
+			font-weight: bold;
+			margin: 0.5em 0;	
+		}	
+	}
+
+	border-bottom: solid 1px #ddd;
+	box-shadow: 0px 0px 1px #000;
+}
+
+.flashes {
+	@include outer-container(68em);
+
+	.flash-alert {
+		border: solid 1px #de1b31;
+	}
+
+	.flash-error {
+		border: solid 1px #de1b31;
+	}
+
+	.flash-notice {
+		border: solid 1px #000;
+	}
+
+	.flash-success {
+		border: solid 1px #2adc55;
+	}
+
+	.flash-alert,
+	.flash-error,
+	.flash-notice,
+	.flash-success {
+		padding: 0.5em;
+		border-radius: 2px;
+		margin: 0.5em 0;
+	}
+ }
