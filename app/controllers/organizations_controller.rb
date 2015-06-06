@@ -5,6 +5,10 @@ class OrganizationsController < ApplicationController
     @organizations = Organization.all
   end
 
+  def pending
+    @organizations = Organization.where(status: "pending")
+  end
+
   def show
   end
 
