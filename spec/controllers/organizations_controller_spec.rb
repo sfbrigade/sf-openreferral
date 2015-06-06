@@ -1,6 +1,8 @@
 require "rails_helper"
 
 describe OrganizationsController do
+  before(:each) { login_admin }
+
   describe "GET index" do
     it "assigns all organizations as @organizations" do
       organization = create(:organization)
