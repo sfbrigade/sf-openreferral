@@ -16,7 +16,7 @@ $('.sortable th').click(function(){
     for (var i = 0; i < rows.length; i++){
         $table.append(rows[i]);
     }
-})
+});
 
 function comparer(index) {
     return function(a, b) {
