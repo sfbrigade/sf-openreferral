@@ -5,6 +5,10 @@ class OrganizationsController < ApplicationController
     @organizations = Organization.all
   end
 
+  def pending
+    @organizations = Organization.where(status: "pending")
+  end
+
   def show
   end
 
@@ -27,7 +31,11 @@ class OrganizationsController < ApplicationController
 
   def update
     if @organization.update(organization_params)
-      redirect_to @organization, notice: t(".success")
+      if organization_params[:status] == "approved"
+        redirect_to "/pending", notice: "#{@organization.name} was approved"
+      else
+        redirect_to @organization, notice: t(".success")
+      end
     else
       render :edit
     end
@@ -52,6 +60,7 @@ class OrganizationsController < ApplicationController
       :name,
       :phone,
       :url,
+      :status,
     )
   end
 end
