@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :organization do
-    name "MyString"
-    description "MyText"
-    address "MyString"
+    sequence(:name) { |n| "Organization #{n}" }
+    description { "#{name} description" }
+    address "address line"
     phone "MyString"
     email "MyString"
     url "MyString"
