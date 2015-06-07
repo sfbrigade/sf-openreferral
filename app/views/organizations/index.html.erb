@@ -1,22 +1,37 @@
-<h1>Listing Organizations</h1>
-<%if admin_signed_in? %>
-  <%= link_to "Sign out", destroy_admin_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign in", new_admin_session_path %>
-<% end %>
+<div class="sidebar organization-sidebar">
+  <div class="organization-search">
+    <input type="search" />
+  </div>
 
-<div id="wrapper">
-      <div id="organizations">
-        <% @organizations.each do |organization| %>
-        <p><%= link_to organization.name, organization, remote:true, class: 'organization-link'%></p>
+  <% @organization_groups.each do |status, group| %>
+    <div class="organization-category"%>
+      <h2><%= status.titleize %> Records (<%= group.count %>)</h1>
+    </div>
+
+    <ul class="organization-list">
+      <% group.each do |organization| %>
+        <%= content_tag(:li, class: "organization-listing organization-#{
+            organization.valid? ? "valid" : "invalid"
+        }") do %>
+          <%= link_to(
+            organization.name,
+            organization,
+            remote: true,
+            class: 'organization-link'
+          ) %>
         <% end %>
-      </div>
-
-      <div id="organization-content">
-        <h1>Welcome!</h1>
-        <p>Get started by selecting an organization on the left!</p>
-      </div>
-    <br>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
 
-<div id="bottom-links"><%= link_to 'New Organization', new_organization_path %></div>
+<div class="main organization-main">
+  <div class="organization-actions">
+    <%= link_to 'New Organization', new_organization_path %>
+  </div>
+
+  <div class="details organization-details" id="organization-content">
+    <h1>Welcome!</h1>
+    <p>Get started by selecting an organization on the left!</p>
+  </div>
+</div>

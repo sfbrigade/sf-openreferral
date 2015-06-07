@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get "/pending", to: "organizations#pending", as: :pending_organizations
 
   resources :organizations
+
+  root to: "organizations#index"
 end

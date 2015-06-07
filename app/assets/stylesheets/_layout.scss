@@ -1,7 +1,9 @@
-.content {
-  @include outer-container(68em);
+body {
+  background-color: $base-background-color;
+}
 
-  .high_voltage-pages {
-    @include outer-container(100%);
-  }
+.content {
+  @include outer-container;
+  margin-top: 2 * $base-spacing;
+  position: relative;
 }

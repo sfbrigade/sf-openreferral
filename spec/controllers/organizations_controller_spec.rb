@@ -4,12 +4,12 @@ describe OrganizationsController do
   before(:each) { login_admin }
 
   describe "GET index" do
-    it "assigns all organizations as @organizations" do
-      organization = create(:organization)
+    it "assigns all organizations as @organizations grouped by status" do
+      organization = create(:organization, status: :pending)
 
       get :index
 
-      expect(assigns(:organizations)).to eq([organization])
+      expect(assigns(:organization_groups)).to eq("pending" => [organization])
     end
   end
 
