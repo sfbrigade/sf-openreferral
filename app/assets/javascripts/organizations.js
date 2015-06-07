@@ -1,26 +1,40 @@
-$(document).pjax('a.organization-link', '#organization-content', {push: false} );
-$(document).pjax('a.edit-link-pjax', '#organization-content', {push: false} );
+$(document).pjax('a.organization-link', '#organization-content', {push: false});
+$(document).pjax('a.edit-link-pjax', '#organization-content', {push: false});
+$(document).pjax('a.update-link-pjax', '#organization-content', {push: false});
 
 $(document).on('submit', '#edit-form form', function(event) {
-    $.pjax.submit(event, '#organization-content', {push: false});
+  $.pjax.submit(event, '#organization-content', {push: false});
 });
 
+$('#organization-content').on('pjax:success', function() {
+  if (('.org-address').length >= 1 ) {
+    displayMap($('.org-address').text());
+  }
+
+  $.pjax.reload("#sidebar-pjax-container", {
+    url: "/organizations/sidebar",
+    push: false,
+  });
+});
+
+
 // input form
-$('.organization-search input').keyup(function (){
-	var filter = $(this).val();
-	var regex  = new RegExp(filter, 'i');
+$(document).on('keyup', '#search', function (event){
 
-	$('.organization-listing a').each(function (){
-		var matches = $(this).text().match(regex);
+  var filter = $(this).val();
+  var regex  = new RegExp(filter, 'i');
 
-		// matches
-		if (matches !== null){
-			$(this).parent().removeClass('hidden');
-		}
+  $('.organization-listing a').each(function (){
+    var matches = $(this).text().match(regex);
 
-		// does not match
-		else {
-			$(this).parent().addClass('hidden');
-		}
-	});
+    // matches
+    if (matches !== null){
+      $(this).parent().removeClass('hidden');
+    }
+
+    // does not match
+    else {
+      $(this).parent().addClass('hidden');
+    }
+  });
 });

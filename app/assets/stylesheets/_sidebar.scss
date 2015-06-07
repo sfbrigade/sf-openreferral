@@ -1,10 +1,14 @@
+.sidebar-container {
+  @include span-columns(3 of 12);
+  min-height: 600px;
+
+  .organization-sidebar {
+    @include fill-parent;
+  }
+}
+
 .organization {
   $actions-height: 3 * $base-spacing;
-
-  &-sidebar {
-    @include span-columns(3 of 12);
-    min-height: 600px;
-  }
 
   &-listing {
     $listing-height: 2 * $base-spacing;
@@ -56,9 +60,14 @@
   &-details {
     @include padding($base-spacing);
     @include span-columns(9 of 12);
-    border: $base-border;
     bottom: 0;
     position: absolute;
     top: $actions-height;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(#000, 0.3);
   }
+}
+
+.button {
+  @include button;
 }
