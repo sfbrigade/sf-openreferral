@@ -54,9 +54,10 @@ ActiveRecord::Schema.define(version: 20150606190125) do
     t.string   "name"
     t.text     "description"
     t.string   "address"
-    t.string   "phone"
-    t.string   "email"
+    t.string   "phones",      default: [],                     array: true
+    t.string   "emails",      default: [],                     array: true
     t.string   "url"
+    t.string   "languages",   default: [],                     array: true
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.string   "status",      default: "pending", null: false
