@@ -15,17 +15,28 @@
 
 <p>
   <strong>Phone:</strong>
-  <%= @organization.phone %>
+  <% @organization.phones.each do |phone| %>
+    <%= phone %>
+  <% end %>
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= @organization.email %>
+  <% @organization.emails.each do |email| %>
+    <%= email %>
+  <% end %>
 </p>
 
 <p>
   <strong>Url:</strong>
   <%= @organization.url %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <% @organization.languages.each do |language| %>
+    <%= language %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_organization_path(@organization) %>

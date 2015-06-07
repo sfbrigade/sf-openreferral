@@ -3,8 +3,9 @@ FactoryGirl.define do
     sequence(:name) { |n| "Organization #{n}" }
     description { "#{name} description" }
     address "address line"
-    phone "MyString"
-    email "MyString"
+    phones ["MyString"]
+    emails ["MyString"]
     url "MyString"
+    languages []
   end
 end

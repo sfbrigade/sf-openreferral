@@ -25,9 +25,10 @@
         <td><%= organization.name %></td>
         <td><%= organization.description %></td>
         <td><%= organization.address %></td>
-        <td><%= organization.phone %></td>
-        <td><%= organization.email %></td>
+        <td><%= organization.phones %></td>
+        <td><%= organization.emails %></td>
         <td><%= organization.url %></td>
+        <td><%= organization.languages %></td>
         <td><%= link_to 'Show', organization %></td>
         <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
         <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>

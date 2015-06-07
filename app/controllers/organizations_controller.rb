@@ -56,11 +56,12 @@ class OrganizationsController < ApplicationController
     params.require(:organization).permit(
       :address,
       :description,
-      :email,
+      { emails: [] },
       :name,
-      :phone,
+      { phones: [] },
       :url,
       :status,
+      { languages: [] }
     )
   end
 end
