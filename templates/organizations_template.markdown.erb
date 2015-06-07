@@ -1,0 +1,33 @@
+<% organizations.each do |o| %>
+# <%= o.name %>
+
+<%= o.description %>
+
+## Adress:
+<%= o.address %>
+
+<% if o.emails.any? %>
+## Emails:
+  <% o.emails.each do |e|  %>
+- <%= e %>
+  <% end %>
+<% end %>
+
+<% if o.languages.any? %>
+## Languages:
+  <% o.languages.each do |l|  %>
+- <%= l %>
+  <% end %>
+<% end %>
+
+<% if o.phones.any? %>
+## Phones:
+  <% o.phones.each do |p|  %>
+- <%= p %>
+  <% end %>
+<% end %>
+
+## URL
+<%= o.url %>
+<% end %>
+
