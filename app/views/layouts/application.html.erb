@@ -19,7 +19,7 @@
     <ul class="menu">
       <!-- <li class="logo"></li> -->
       <li class="menu-link"><%= link_to 'Home', '/', :method => :get %></li>
-      <%if admin_signed_in? %>
+      <% if admin_signed_in? %>
         <li class="menu-link"><%= link_to "Sign out", destroy_admin_session_path, method: :delete %></li>
       <% else %>
         <li class="menu-link"><%= link_to "Sign in", new_admin_session_path %></li>
@@ -31,7 +31,7 @@
 
   <%= render "flashes" -%>
 
-  <div class="content">
+  <div class="content <%= body_class %>">
     <%= yield %>
   </div>
 
