@@ -14,6 +14,7 @@ $('#organization-content').on('pjax:success', function() {
   $.pjax.reload("#sidebar-pjax-container", {
     url: "/organizations/sidebar",
     push: false,
+    replace: false
   });
 });
 
