@@ -5,7 +5,7 @@ $(document).on('submit', '#edit-form form', function(event) {
     $.pjax.submit(event, '#organization-content', {push: false});
 });
 
-// retrieve organization list
+// input form
 $('.organization-search input').change(function (){
 	var filter = $(this).val();
 	var regex  = new RegExp(filter, 'i');
