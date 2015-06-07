@@ -18,12 +18,14 @@
   <div class="nav">
     <ul class="menu">
       <!-- <li class="logo"></li> -->
+      <li class="menu-link"><%= link_to 'Home', '/', :method => :get %></li>
       <%if admin_signed_in? %>
         <li class="menu-link"><%= link_to "Sign out", destroy_admin_session_path, method: :delete %></li>
       <% else %>
         <li class="menu-link"><%= link_to "Sign in", new_admin_session_path %></li>
       <% end %>
       <li class="menu-link"><%= link_to 'Organizations', '/organizations', :method => :get %></li>
+      <li class="menu-link"><%= link_to 'Pending', '/pending', :method => :get %></li>
     </ul>
   </div>
 

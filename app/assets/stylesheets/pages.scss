@@ -1,0 +1,26 @@
+@import "application";
+
+$white: #fff;
+
+.hero {
+	h1 {
+		margin-top: 0.5em;
+		text-align: center;
+		font-size: 5em;
+	}
+}
+
+.overview {
+  background-color: $green;
+}
+
+.row {
+	@include outer-container(68em);
+
+	div {
+		@include span-columns(3);
+
+		color: $white;
+	} 
+}
+
