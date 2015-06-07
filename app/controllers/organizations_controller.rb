@@ -9,6 +9,12 @@ class OrganizationsController < ApplicationController
     @organizations = Organization.where(status: "pending")
   end
 
+  def change_status
+    @organization = Organization.find(params[:id])
+    @organization.update(status: params[:status])
+    render :show
+  end
+
   def sidebar
     @organization_groups = Organization.all.group_by(&:status)
   end
@@ -35,11 +41,8 @@ class OrganizationsController < ApplicationController
 
   def update
     if @organization.update(organization_params)
-      if organization_params[:status] == "approved"
-        redirect_to @organization, notice: "#{@organization.name} was approved"
-      else
-        redirect_to @organization, notice: t(".success")
-      end
+      flash[:notice] = "#{@organization.name} was approved"
+      render :show
     else
       render :edit
     end
