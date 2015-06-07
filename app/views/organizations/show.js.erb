@@ -1,4 +1,4 @@
-<%= link_to 'Edit', edit_organization_path(@organization), class: 'edit-link-pjax' %>
+<%= link_to 'Edit', edit_organization_path(@organization), remote: true, class: 'edit-link-pjax' %>
 
 <p>
   <strong>Name:</strong>
@@ -12,7 +12,7 @@
 
 <p>
   <strong>Address:</strong>
-  <%= @organization.address %>
+  <span class="org-address"><%= @organization.address %></span>
 </p>
 
 <p>
@@ -40,6 +40,8 @@
     <%= language %>
   <% end %>
 </p>
+
+<div id="map-canvas" style="height: 300px;"></div>
 
 <% if @organization.status == 'pending' %>
   <%= link_to 'Approve', organization_path(@organization, organization: { status: 'approved' }), :method => :put %>
