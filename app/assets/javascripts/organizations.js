@@ -16,3 +16,25 @@ $('#organization-content').on('pjax:success', function() {
     push: false,
   });
 });
+
+
+// input form
+$(document).on('keyup', '#search', function (){
+
+  var filter = $(this).val();
+  var regex  = new RegExp(filter, 'i');
+
+  $('.organization-listing a').each(function (){
+    var matches = $(this).text().match(regex);
+
+    // matches
+    if (matches !== null){
+      $(this).parent().removeClass('hidden');
+    }
+
+    // does not match
+    else {
+      $(this).parent().addClass('hidden');
+    }
+  });
+});
