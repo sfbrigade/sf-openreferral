@@ -9,6 +9,10 @@ class OrganizationsController < ApplicationController
     @organizations = Organization.where(status: "pending")
   end
 
+  def sidebar
+    @organization_groups = Organization.all.group_by(&:status)
+  end
+
   def show
   end
 

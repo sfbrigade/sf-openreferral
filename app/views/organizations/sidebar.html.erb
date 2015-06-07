@@ -1,0 +1,26 @@
+<div class="sidebar organization-sidebar">
+  <div class="organization-search">
+    <input type="search" />
+  </div>
+
+  <% @organization_groups.each do |status, group| %>
+    <div class="organization-category"%>
+      <h2><%= status.titleize %> Records (<%= group.count %>)</h1>
+    </div>
+
+    <ul class="organization-list">
+      <% group.each do |organization| %>
+        <%= content_tag(:li, class: "organization-listing organization-#{
+            organization.valid? ? "valid" : "invalid"
+        }") do %>
+          <%= link_to(
+            organization.name,
+            organization,
+            remote: true,
+            class: 'organization-link'
+          ) %>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
