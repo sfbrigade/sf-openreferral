@@ -17,7 +17,7 @@ describe OrganizationsController do
     it "assigns the requested organization as @organization" do
       organization = create(:organization)
 
-      get :show, id: organization.to_param
+      xhr :get, :show, id: organization.to_param
 
       expect(assigns(:organization)).to eq(organization)
     end
