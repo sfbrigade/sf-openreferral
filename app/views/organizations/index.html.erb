@@ -1,14 +1,19 @@
 <h1>Listing Organizations</h1>
+<%if admin_signed_in? %>
+  <%= link_to "Sign out", destroy_admin_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign in", new_admin_session_path %>
+<% end %>
 
-  <div id="organizations">
-    <% @organizations.each do |organization| %>
-    <p><%= link_to organization.name, organization, remote:true, class: 'organization-link'%></p>
-    <% end %>
-  </div>
+<div id="wrapper">
+      <div id="organizations">
+        <% @organizations.each do |organization| %>
+        <p><%= link_to organization.name, organization, remote:true, class: 'organization-link'%></p>
+        <% end %>
+      </div>
 
-  <div id="organization-content">
-  </div>
+      <div id="organization-content"></div>
+    <br>
+</div>
 
-<br>
-
-<div><%= link_to 'New Organization', new_organization_path %></div>
+<div id="bottom-links"><%= link_to 'New Organization', new_organization_path %></div>

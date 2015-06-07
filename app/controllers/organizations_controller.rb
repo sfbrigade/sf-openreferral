@@ -32,7 +32,7 @@ class OrganizationsController < ApplicationController
   def update
     if @organization.update(organization_params)
       if organization_params[:status] == "approved"
-        redirect_to "/pending", notice: "#{@organization.name} was approved"
+        redirect_to @organization, notice: "#{@organization.name} was approved"
       else
         redirect_to @organization, notice: t(".success")
       end
