@@ -1,0 +1,9 @@
+<% unless @import.complete? %>
+  <% content_for(:head) do %>
+    <meta http-equiv="refresh" content="2">
+  <% end %>
+<% end %>
+
+<% @import.organizations.each do |organization| %>
+  <%= organization.name %>
+<% end %>

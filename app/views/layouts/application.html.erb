@@ -14,6 +14,7 @@
   <title><%= title %></title>
   <%= stylesheet_link_tag :application, media: "all" %>
   <%= csrf_meta_tags %>
+  <%= content_for(:head) %>
 </head>
 <body class="<%= body_class %>">
   <%= render "navigation" %>

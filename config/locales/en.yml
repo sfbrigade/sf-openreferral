@@ -13,6 +13,11 @@ en:
       success: Organization was successfully updated.
     destroy:
       success: Organization was successfully destroyed.
+  imports:
+    new:
+      submit: Start Import
+    create:
+      success: Import was successfully created.
 
   time:
     formats:

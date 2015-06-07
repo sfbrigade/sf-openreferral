@@ -11,6 +11,9 @@ Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |file| require file }
 module Features
   # Extend this module in spec/support/features/*.rb
   include Formulaic::Dsl
+
+  include Warden::Test::Helpers
+  Warden.test_mode!
 end
 
 RSpec.configure do |config|
@@ -20,6 +23,14 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.include Devise::TestHelpers, type: :controller
   config.include ControllerMacros, type: :controller
+
+  config.around(:each, type: :feature) do |example|
+    run_background_jobs_immediately do
+      example.run
+    end
+  end
+
+  config.include BackgroundJobs
 end
 
 ActiveRecord::Migration.maintain_test_schema!

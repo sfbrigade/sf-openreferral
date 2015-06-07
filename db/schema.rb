@@ -50,6 +50,12 @@ ActiveRecord::Schema.define(version: 20150607071502) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
+  create_table "imports", force: :cascade do |t|
+    t.string   "data_url",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -61,6 +67,7 @@ ActiveRecord::Schema.define(version: 20150607071502) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.string   "status",      default: "pending", null: false
+    t.integer  "import_id"
   end
 
 end

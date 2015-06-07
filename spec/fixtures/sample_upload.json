@@ -1,0 +1,43 @@
+[
+  {
+    "locations": [
+      {
+        "languages": [
+          "English",
+          "Spanish",
+          "Chinese"
+            ],
+            "name": "30th Street Senior Center",
+            "phones_attributes": [
+              {
+                "number": "415 550-2210"
+              },
+              {
+                "type": "TTY",
+                "number": "415 647-6332"
+              }
+            ],
+            "short_desc": "30th Street Senior Center, one of the largest multi-purpose senior centers in San Francisco, offers five distinct programs. ",
+            "hours": "Monday - Saturday, 8:30am - 5:00pm",
+            "urls": [
+              "http://www.onlok.org/30thsite"
+            ],
+            "address_attributes": {
+              "city": "San Francisco",
+              "state": "CA",
+              "street": "225 30th Street, 3rd Floor",
+              "zip": "94131"
+            },
+            "emails": [
+              "30thStSeniorServices@onlok.org"
+            ],
+            "description": "30th Street Senior Center, one of the largest multi-purpose senior centers in San Francisco, offers five distinct programs."
+      }
+    ],
+    "services_attributes": {
+      "audience": "Seniors and their Families",
+      "fees": "None"
+    },
+    "name": "30th Street Senior Center"
+  }
+]

@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   get "/organizations/:id/change_status", to: "organizations#change_status", as: :change_organization_status
   resources :organizations
 
+  resources :imports, only: [:create, :new, :show]
+
   root to: "organizations#index"
 end
