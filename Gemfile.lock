@@ -152,6 +152,7 @@ GEM
       mini_portile (~> 0.6.0)
     normalize-rails (3.0.3)
     orm_adapter (0.5.0)
+    pandoc-ruby (1.0.0)
     pg (0.18.2)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -302,6 +303,7 @@ DEPENDENCIES
   neat (~> 1.7.0)
   newrelic_rpm (>= 3.9.8)
   normalize-rails (~> 3.0.0)
+  pandoc-ruby
   pg
   pry-rails
   rack-canonical-host

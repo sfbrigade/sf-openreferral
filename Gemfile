@@ -26,6 +26,7 @@ gem "simple_form"
 gem "title"
 gem "uglifier"
 gem "unicorn"
+gem "pandoc-ruby"
 
 group :development do
   gem "spring"
