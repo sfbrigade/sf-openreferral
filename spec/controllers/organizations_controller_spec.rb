@@ -35,7 +35,7 @@ describe OrganizationsController do
     it "assigns the requested organization as @organization" do
       organization = create(:organization)
 
-      xhr :get :edit, id: organization.to_param
+      xhr :get, :edit, id: organization.to_param
 
       expect(assigns(:organization)).to eq(organization)
     end
