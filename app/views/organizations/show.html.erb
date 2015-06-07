@@ -1,49 +1,98 @@
 <%= render "individual_actions" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @organization.name %>
-</p>
+<div class="container">
 
-<p>
-  <strong>Description:</strong>
-  <%= @organization.description %>
-</p>
+  <h1><%= @organization.name %></h1>
+  <div class="organization-url"><%= @organization.url %></div>
 
-<p>
-  <strong>Address:</strong>
-  <span class="org-address"><%= @organization.address %></span>
-</p>
+  <div class="column">
+    <div class="description section">
+      <h2>About</h2>
+      <p><%= @organization.description %></p>
+    </div>
 
-<p>
-  <strong>Phone:</strong>
-  <% @organization.phones.each do |phone| %>
-    <%= phone %>
-  <% end %>
-</p>
+    <div class="services section">
+      <h2>Services</h2>
+      <ul class="primary-services">
+        <li>Substance Abuse Treatment</li>
+        <li>Mental Health Treatment</li>
+        <li>Health &amp; Wellness Education</li>
+      </ul>
+    </div>
 
-<p>
-  <strong>Email:</strong>
-  <% @organization.emails.each do |email| %>
-    <%= email %>
-  <% end %>
-</p>
+    <div class="eligibility section">
+      <h2>Is this for me?</h2>
+      <dl>
+        <dt>Serves</dt>
+        <dd>Men, Women, ages 12-25, involved in criminal justice system.</dd>
 
-<p>
-  <strong>Url:</strong>
-  <%= @organization.url %>
-</p>
+        <dt>Fees</dt>
+        <dd>None.</dd>
 
-<p>
-  <strong>Language:</strong>
-  <% @organization.languages.each do |language| %>
-    <%= language %>
-  <% end %>
-</p>
+        <dt>Languages</dt>
+        <dd><%= @organization.languages.join(", ") %></dd>
 
-<div id="map-canvas" style="height: 300px;"></div>
+        <dt>Accessibility</dt>
+        <dd>Wheelchair</dd>
 
-<%= form_tag({controller: "api", action: "export_organization"}, { method: "get", class: "organization-export"}) do %>
-  <%= select_tag(:format, options_for_select(ApiController::SUPPORTED_FORMATS)) %>
-  <%= submit_tag "Export Organization" %>
-<% end %>
+        <dt>Faith Based</dt>
+        <dd>No</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="location section">
+      <div class="map" id="map-canvas"></div>
+      <h2 class="org-address"><%= @organization.address %></h2>
+
+      <div class="contact subsection">
+        <ul class="phones">
+          <% @organization.phones.each do |phone| %>
+            <li><%= phone %></li>
+          <% end %>
+        </ul>
+
+        <div class="fax">Fax: (415) 487-6724</div>
+
+        <% @organization.emails.each do |email| %>
+          <div class="email"><%= email %></div>
+        <% end %>
+      </div>
+
+      <div class="hours subsection">
+        <h2>Hours</h2>
+        <div class="regular-hours">
+          Monday–Thursday, 10:00am to 7:00pm; Fridays, 10:00am to 6:30pm
+        </div>
+
+        <div class="intake-hours">
+          New clients: Monday–Friday, based on appointment.
+        </div>
+      </div>
+
+      <div class="requirements subsection">
+        <h2>Bring</h2>
+        <div>
+          Proof of San Francisco Residency.
+          Program will assist entering clients in getting this.
+        </div>
+      </div>
+    </div>
+
+    <div class="people section">
+      <h2>People</h2>
+      <div class="person">
+        <div class="name">Shirley Maciel</div>
+        <div class="title">Director</div>
+        <div class="phone">(415) 487-6702</div>
+        <div class="email">shirley16maciel@gmail.com </div>
+      </div>
+    </div>
+
+    <div class="notes section">
+      <h2>Notes</h2>
+      <div>Clients can get a referral off our website. Appointment preferred.</div>
+    </div>
+  </div>
+</div>

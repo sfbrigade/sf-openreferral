@@ -1,6 +1,5 @@
 .sidebar-container {
   @include span-columns(3 of 12);
-  min-height: 600px;
 
   .organization-sidebar {
     @include fill-parent;
@@ -45,6 +44,7 @@
   &-main {
     @include omega;
     @include span-columns(9 of 12);
+    margin-bottom: $base-spacing * 2;
   }
 
   &-actions {
@@ -55,13 +55,17 @@
     a {
       @include button;
     }
+
+    form,
+    select {
+      display: inline-block;
+    }
   }
 
   &-details {
     @include padding($base-spacing);
     @include span-columns(9 of 12);
-    bottom: 0;
-    position: absolute;
+    @include fill-parent;
     top: $actions-height;
     background-color: #fff;
     box-shadow: 0 0 6px rgba(#000, 0.3);
