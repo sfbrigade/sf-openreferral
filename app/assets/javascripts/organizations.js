@@ -19,7 +19,7 @@ $('#organization-content').on('pjax:success', function() {
 
 
 // input form
-$(document).on('keyup', '#search', function (event){
+$(document).on('keyup', '#search', function (){
 
   var filter = $(this).val();
   var regex  = new RegExp(filter, 'i');
