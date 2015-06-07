@@ -1,19 +1,18 @@
-div {
-  display: block;
-  float: left
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
 }
-
+#organizations, #organization-content {
+  float: left;
+}
 #organizations {
-  padding-left: 20px;
-  width: 60%;
-  font-size: 12px;
-}
-
-#organizations p{
-  margin: 0;
+  width: 30%;
 }
 
 #organization-content {
-  width: 40%;
+  width: 70%;
+}
+
+#bottom-links {
   clear: both;
 }

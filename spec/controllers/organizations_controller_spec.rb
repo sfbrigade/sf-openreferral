@@ -35,7 +35,7 @@ describe OrganizationsController do
     it "assigns the requested organization as @organization" do
       organization = create(:organization)
 
-      get :edit, id: organization.to_param
+      xhr :get, :edit, id: organization.to_param
 
       expect(assigns(:organization)).to eq(organization)
     end
@@ -129,7 +129,7 @@ describe OrganizationsController do
       it "assigns the organization as @organization" do
         organization = create(:organization)
 
-        put :update, id: organization.to_param, organization: { name: "" }
+        xhr :put, :update, id: organization.to_param, organization: { name: "" }
 
         expect(assigns(:organization)).to eq(organization)
       end
@@ -137,7 +137,7 @@ describe OrganizationsController do
       it "re-renders the 'edit' template" do
         organization = create(:organization)
 
-        put :update, id: organization.to_param, organization: { name: "" }
+        xhr :put, :update, id: organization.to_param, organization: { name: "" }
 
         expect(response).to render_template("edit")
       end
