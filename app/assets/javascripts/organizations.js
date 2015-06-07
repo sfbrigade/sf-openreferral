@@ -10,7 +10,7 @@ $('.organization-search input').change(function (){
 	var filter = $(this).val();
 	var regex  = new RegExp(filter, 'i');
 
-	$('.organization-listing a').each(function (index){
+	$('.organization-listing a').each(function (){
 		var matches = $(this).text().match(regex);
 
 		// matches
