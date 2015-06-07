@@ -10,17 +10,11 @@ $white: #fff;
 	}
 }
 
-.overview {
-  background-color: $green;
-}
-
 .row {
 	@include outer-container(68em);
 
 	div {
 		@include span-columns(3);
-
-		color: $white;
 	} 
 }
 

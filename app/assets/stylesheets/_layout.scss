@@ -1,6 +1,4 @@
-:not(body.high_voltage-pages) {
-	.content {
-	  @include outer-container;
-	}	
+.content {
+	 @include outer-container(68em);
 }
 
