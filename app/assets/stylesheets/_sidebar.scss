@@ -3,6 +3,7 @@
 
   &-sidebar {
     @include span-columns(3 of 12);
+    min-height: 600px;
   }
 
   &-listing {
