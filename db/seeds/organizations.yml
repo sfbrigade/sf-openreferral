@@ -47,7 +47,6 @@
   :address: 375 Woodside Avenue, Building W-3
   :phones:
     - 415 753-7810
-  :emails:
   :url: http://www.sfdph.org/dph/comupg/oservices/medSvs/hlthCtrs/SPYHlthCtr.asp
 - :name: Weingart Center
   :description: The Weingart Center is a non-profit comprehensive human services organization
@@ -107,7 +106,6 @@
   :address: 850 Bryant Street, Room 320
   :phones:
     - 415 553-9044
-  :emails:
   :url: http://www.sfdistrictattorney.org
 - :name: Legal Services for Prisoners with Children (LSPC)
   :description: LSPC advocates for the human rights and empowerment of incarcerated
@@ -148,5 +146,4 @@
   :address: 280 Turk Street
   :phones:
     - 415 929-2470
-  :emails:
   :url: http://www.chp-sf.org
