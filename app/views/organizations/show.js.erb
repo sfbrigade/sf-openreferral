@@ -46,3 +46,12 @@
 <% else %>
   <%= link_to 'Unapprove', organization_path(@organization, organization: { status: 'pending' }), :method => :put %>
 <% end %>
+
+<form action="<%= "#{api_export_path}" %>", id="export_format">
+  <select  name="format" id="export_format"  size="1">
+      <% ApiController::SUPPORTED_FORMATS.each do |f| %>
+          <option value="<%= f %>"><%= f %></option>
+      <% end %>
+    </select>
+    <input type="submit" value="Export">
+</form>

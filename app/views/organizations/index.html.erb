@@ -33,5 +33,16 @@
   <div class="details organization-details" id="organization-content">
     <h1>Welcome!</h1>
     <p>Get started by selecting an organization on the left!</p>
+    <div class="organization-export">
+      <form action="<%= api_export_all_path %>", id="export_format">
+        <select  name="format" id="export_format"  size="1">
+            <% ApiController::SUPPORTED_FORMATS.each do |f| %>
+                <option value="<%= f %>"><%= f %></option>
+            <% end %>
+          </select>
+          <input type="submit" value="Export All">
+      </form>
+    </div>
   </div>
 </div>
+
