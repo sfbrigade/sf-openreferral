@@ -1,4 +1,4 @@
-<%= link_to 'Edit', edit_organization_path(@organization), remote: true, class: 'edit-link-pjax' %>
+<%= render "individual_actions" %>
 
 <p>
   <strong>Name:</strong>
@@ -42,9 +42,3 @@
 </p>
 
 <div id="map-canvas" style="height: 300px;"></div>
-
-<% if @organization.status == 'pending' %>
-  <%= link_to 'Approve', organization_path(@organization, organization: { status: 'approved' }), :method => :put %>
-<% else %>
-  <%= link_to 'Unapprove', organization_path(@organization, organization: { status: 'pending' }), :method => :put %>
-<% end %>

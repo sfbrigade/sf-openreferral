@@ -1,0 +1,23 @@
+<div class="organization-actions organization-details-actions">
+  <%= link_to(
+    "Edit",
+    edit_organization_path(@organization),
+    class: "edit-link-pjax",
+  ) %>
+
+  <% if @organization.status == "pending" %>
+    <%= link_to(
+      "Approve",
+      organization_path(@organization, organization: { status: "approved" }),
+      class: "button edit-link-pjax",
+      method: :put,
+    ) %>
+  <% else %>
+    <%= link_to(
+      "Unapprove",
+      organization_path(@organization, organization: { status: "pending" }),
+      class: "button edit-link-pjax",
+      method: :put,
+    ) %>
+  <% end %>
+ </div>
