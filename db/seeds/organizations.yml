@@ -10,8 +10,10 @@
     provide training in first aid, CPR and disaster preparedness, while offering support
     and comfort to families who have lost their homes to disaster.
   :address: "￼85 Second Street, 8th Floor"
-  :phone: 415 427-8000
-  :email: arcbainfo@usa.redcross.org
+  :phones:
+    - 415 427-8000
+  :emails:
+    - arcbainfo@usa.redcross.org
   :url: http://www.redcrossbayarea.org
 - :name: NICOS Chinese Health Coalition
   :description: NICOS Chinese Health Coalition is a public-private-community partnership
@@ -27,8 +29,10 @@
     Staff also provides awareness and prevention trainings for professionals, as well
     as the general public.
   :address: 1208 Mason Street
-  :phone: 415 788-6426
-  :email: info@nicoschc.org
+  :phones:
+    - 415 788-6426
+  :emails:
+    - info@nicoschc.org
   :url: http://www.nicoschc.org
 - :name: Special Programs for Youth
   :description: Special Programs for Youth provides health care services specifically
@@ -41,8 +45,9 @@
     small group counseling and health education, are provided three days a week. Confidential
     HIV antibody testing and follow-up, and a teen fathers program are also available.
   :address: 375 Woodside Avenue, Building W-3
-  :phone: 415 753-7810
-  :email:
+  :phones:
+    - 415 753-7810
+  :emails:
   :url: http://www.sfdph.org/dph/comupg/oservices/medSvs/hlthCtrs/SPYHlthCtr.asp
 - :name: Weingart Center
   :description: The Weingart Center is a non-profit comprehensive human services organization
@@ -58,16 +63,20 @@
     and various other solutions.For assistance on how to get help, please call our
     Resource Center at 213-689-2160No.
   :address: 566 South San Pedro Street, Los Angeles
-  :phone: '2136272151'
-  :email: center@weingart.org
+  :phones:
+    - '2136272151'
+  :emails:
+    - center@weingart.org
   :url: weingart.org/
 - :name: Central City Hospitality House Tenderloin Self-Help Center
   :description: The Tenderloin Self-Help Center offers homeless and low-income adults
     case management, substance abuse counseling, health education, employment counseling,
     computer training, support groups, recreational activities, and housing assistance.
   :address: 290 Turk Street
-  :phone: 415 749-2100
-  :email: info@hospitalityhouse.org
+  :phones:
+    - 415 749-2100
+  :emails:
+    - info@hospitalityhouse.org
   :url: http://www.hospitalityhouse.org/tenderloin.html
 - :name: Chinatown Community Development Center
   :description: Chinatown CDC is a community development organization with many roles,
@@ -80,8 +89,10 @@
     management, resident empowerment, translation and paperwork assistance, educational
     activities, and social and recreational activities.
   :address: 1525 Grant Avenue
-  :phone: 415 984-1450
-  :email: info@chinatowncdc.org
+  :phones:
+    - 415 984-1450
+  :emails:
+    - info@chinatowncdc.org
   :url: http://www.chinatowncdc.org
 - :name: San Francisco District Attorney's Office (Victim Services Unit)
   :description: The Victim Services Unit strives to make the criminal justice system
@@ -94,8 +105,9 @@
     bills, counseling services, wage losses, home security improvements and funeral
     expenses not covered by insurance.
   :address: 850 Bryant Street, Room 320
-  :phone: 415 553-9044
-  :email:
+  :phones:
+    - 415 553-9044
+  :emails:
   :url: http://www.sfdistrictattorney.org
 - :name: Legal Services for Prisoners with Children (LSPC)
   :description: LSPC advocates for the human rights and empowerment of incarcerated
@@ -105,8 +117,9 @@
     and their families, and emphasize that issues of race are central to any discussion
     of incarceration.
   :address: 1540 Market Street, Suite 490
-  :phone: 415 255-7036
-  :email:
+  :phones:
+    - 415 255-7036
+  :emails:
   - info@prisonerswithchildren.org
   :url: http://www.prisonerswithchildren.org
 - :name: Mayor of San Francisco
@@ -119,9 +132,10 @@
     to fill the vacancy. The Mayor also appoints Commissioners to the more than 50
     citizen-driven Commissions that oversee City departments.
   :address: 1 Dr. Carlton B. Goodlett Place, Room 200
-  :phone: 415 554-6141
-  :email:
-  - mayoredwinlee@sfgov.org
+  :phones:
+     - 415 554-6141
+  :emails:
+    - mayoredwinlee@sfgov.org
   :url: http://www.sfmayor.org/
 - :name: Community Housing Partnership
   :description: 'Community Housing Partnership (CHP) provides permanent, affordable
@@ -132,6 +146,7 @@
     subsidized housing for very low-income and homeless persons. CHP offers various
     women-specific support groups and professional development opportunities.'
   :address: 280 Turk Street
-  :phone: 415 929-2470
-  :email:
+  :phones:
+    - 415 929-2470
+  :emails:
   :url: http://www.chp-sf.org

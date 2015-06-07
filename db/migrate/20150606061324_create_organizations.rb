@@ -4,9 +4,10 @@ class CreateOrganizations < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :address
-      t.string :phone
-      t.string :email
+      t.string :phones, array: true, default: []
+      t.string :emails, array: true, default: []
       t.string :url
+      t.string :languages, array: true, default: []
 
       t.timestamps null: false
     end
