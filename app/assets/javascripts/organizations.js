@@ -6,7 +6,7 @@ $(document).on('submit', '#edit-form form', function(event) {
 });
 
 // input form
-$('.organization-search input').change(function (){
+$('.organization-search input').keyup(function (){
 	var filter = $(this).val();
 	var regex  = new RegExp(filter, 'i');
 
