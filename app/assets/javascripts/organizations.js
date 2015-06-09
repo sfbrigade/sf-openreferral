@@ -1,9 +1,15 @@
-$(document).pjax('a.organization-link', '#organization-content', {push: false});
-$(document).pjax('a.edit-link-pjax', '#organization-content', {push: false});
-$(document).pjax('a.update-link-pjax', '#organization-content', {push: false});
+$(document).pjax('a.organization-link', '#organization-content', {push: true});
+$(document).pjax('a.edit-link-pjax', '#organization-content', {push: true});
+$(document).pjax('a.update-link-pjax', '#organization-content', {push: true});
 
 $(document).on('submit', '#edit-form form', function(event) {
   $.pjax.submit(event, '#organization-content', {push: false});
+});
+
+$(document).ready(function() {
+  if (('.org-address').length >= 1 ) {
+    displayMap($('.org-address').text());
+  }
 });
 
 $('#organization-content').on('pjax:success', function() {
@@ -18,24 +24,39 @@ $('#organization-content').on('pjax:success', function() {
   });
 });
 
-
-// input form
 $(document).on('keyup', '#search', function (){
-
   var filter = $(this).val();
   var regex  = new RegExp(filter, 'i');
 
   $('.organization-listing a').each(function (){
     var matches = $(this).text().match(regex);
 
-    // matches
-    if (matches !== null){
+    if (matches !== null) {
       $(this).parent().removeClass('hidden');
-    }
-
-    // does not match
-    else {
+    } else {
       $(this).parent().addClass('hidden');
     }
   });
 });
+
+function displayMap(address) {
+  var url =
+    'https://maps.googleapis.com/maps/api/geocode/json?address=' + address;
+
+  $.ajax({
+    url: url,
+    dataType: 'json',
+    type: 'get',
+    success: function(data) {
+      var location = data.results[0].geometry.location;
+      var position = new google.maps.LatLng(location.lat, location.lng);
+
+      var map = new google.maps.Map(
+        document.getElementById('map-canvas'),
+        { zoom: 15, center: position }
+      );
+
+      google.maps.Marker({ position: position, map: map });
+    }
+  });
+}

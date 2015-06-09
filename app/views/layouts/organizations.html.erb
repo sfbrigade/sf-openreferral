@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="ROBOTS" content="NOODP" />
+  <meta name="viewport" content="initial-scale=1" />
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+
+  <%#
+    Configure default and controller-, and view-specific titles in
+    config/locales/en.yml. For more see:
+    https://github.com/calebthompson/title#usage
+  %>
+  <title><%= title %></title>
+  <%= stylesheet_link_tag :application, media: "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= body_class %>">
+  <%= render "navigation" %>
+  <%= render "flashes" -%>
+
+  <div class="content <%= body_class %>">
+    <div class="sidebar-container" id="sidebar-pjax-container">
+      <%= render template: 'organizations/sidebar' %>
+    </div>
+    <div class="main organization-main">
+      <div class="organization-actions">
+        <%= link_to 'New Organization', new_organization_path %>
+      </div>
+
+      <div class="details organization-details" id="organization-content">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+  <%= render "javascript" %>
+</body>
+</html>

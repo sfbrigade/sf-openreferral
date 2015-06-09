@@ -16,10 +16,19 @@ class ApiController < ApplicationController
   def respond_to_format(response_data, filename)
     respond_to do |format|
       format.json { render json: response_data }
-      format.docx do 
-        send_data export_organizations_as_docx(response_data), filename: "#{filename}.docx" 
+
+      format.docx do
+        send_data(
+          export_organizations_as_docx(response_data),
+          filename: "#{filename}.docx",
+        )
       end
-      format.markdown {render text: export_organizations_as_markdown(response_data)}
+
+      format.markdown do
+        render text: export_organizations_as_markdown(response_data)
+      end
+
+      format.any { raise ActionController::RoutingError.new("Not Found") }
     end
   end
 
