@@ -1,5 +1,6 @@
 class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
+  before_action :set_organization_groups
 
   def index
     @organization_groups = Organization.all.group_by(&:status)
@@ -16,7 +17,6 @@ class OrganizationsController < ApplicationController
   end
 
   def sidebar
-    @organization_groups = Organization.all.group_by(&:status)
   end
 
   def show
@@ -41,8 +41,7 @@ class OrganizationsController < ApplicationController
 
   def update
     if @organization.update(organization_params)
-      flash[:notice] = "#{@organization.name} was approved"
-      render :show
+      redirect_to @organization, notice: t(".success")
     else
       render :edit
     end
@@ -54,6 +53,10 @@ class OrganizationsController < ApplicationController
   end
 
   private
+
+  def set_organization_groups
+    @organization_groups = Organization.all.group_by(&:status)
+  end
 
   def set_organization
     @organization = Organization.find(params[:id])
