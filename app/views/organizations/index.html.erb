@@ -1,25 +1,6 @@
-<div class="sidebar-container" id="sidebar-pjax-container">
-<%= render 'sidebar' %>
-</div>
-
-<div class="main organization-main">
-  <div class="organization-actions">
-    <%= link_to 'New Organization', new_organization_path %>
-  </div>
-
-  <div class="details organization-details" id="organization-content">
-    <h1>Welcome!</h1>
-    <p>Get started by selecting an organization on the left!</p>
-    <div class="organization-export">
-      <form action="<%= api_export_all_path %>", id="export_format">
-        <select  name="format" id="export_format"  size="1">
-            <% ApiController::SUPPORTED_FORMATS.each do |f| %>
-                <option value="<%= f %>"><%= f %></option>
-            <% end %>
-          </select>
-          <input type="submit" value="Export All">
-      </form>
-    </div>
-  </div>
-</div>
-
+<h1>Welcome!</h1>
+<p>Get started by selecting an organization on the left!</p>
+<%= form_tag({controller: "api", action: "export_all"}, { method: "get", class: "organization-export"}) do %>
+  <%= select_tag(:format, options_for_select(ApiController::SUPPORTED_FORMATS)) %>
+  <%= submit_tag "Export All" %>
+<% end %>
