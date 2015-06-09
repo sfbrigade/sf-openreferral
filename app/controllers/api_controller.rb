@@ -20,6 +20,7 @@ class ApiController < ApplicationController
         send_data export_organizations_as_docx(response_data), filename: "#{filename}.docx" 
       end
       format.markdown {render text: export_organizations_as_markdown(response_data)}
+      format.any {  raise ActionController::RoutingError.new('Not Found') }
     end
   end
 
