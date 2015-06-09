@@ -19,19 +19,31 @@ RSpec.describe ApiController, :type => :controller do
   end
 
   describe "export" do
-    it 'exports json' do
-      create(:organization, name: "organization json")
-      get :export_all, format: 'json'
-      expect(response_json[0]['name']).to include("organization json")
+    it 'exports single json' do
+      create(:organization, name: "organization 1")
+      create(:organization, name: "organization 42", id: 42)
+      get :export_organization, id: 42, format: :json
+      expect(response_json.size()).to eq(1)
+      expect(response_json[0]['name']).to include("organization 42")
     end
 
-    it 'exports markdown' do
+    it 'exports all json' do
+      create(:organization, name: "organization 1")
+      create(:organization, name: "organization 2")
+      get :export_all, format: 'json'
+      expect(response_json.size()).to eq(2)
+      expect(response_json[0]['name']).to include("organization 1")
+    end
+
+    it 'exports all markdown' do
       create(:organization, name: "organization markdown")
+      create(:organization, name: "organization 2")
       get :export_all, format: 'markdown'
       expect(response.body).to include("# organization markdown")
+      expect(response.body).to include("# organization 2")
     end
 
-    it 'exports docx' do
+    it 'exports all docx' do
       create(:organization, name: "organization docx")
       get :export_all, format: 'docx'
       #how to test for correctly exported docx?
