@@ -41,8 +41,7 @@ class OrganizationsController < ApplicationController
 
   def update
     if @organization.update(organization_params)
-      flash[:notice] = "#{@organization.name} was approved"
-      render :show
+      redirect_to @organization, notice: t(".success")
     else
       render :edit
     end
