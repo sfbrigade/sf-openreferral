@@ -24,6 +24,7 @@ gem "recipient_interceptor"
 gem "refills"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
+gem 'acts-as-taggable-on', '~> 3.4'
 gem "title"
 gem "uglifier"
 gem "unicorn"
