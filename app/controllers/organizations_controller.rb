@@ -43,8 +43,13 @@ class OrganizationsController < ApplicationController
   end
 
   def update
-    if @organization.update(organization_params)
-      redirect_to @organization, notice: t(".success")
+    p params
+    @organization.tag_list.add(*params["organization"]["tags"])
+
+    if @organization.update(organization_params.except(:tags))
+
+      flash[:notice] = "#{@organization.name} was approved"
+      render :show
     else
       render :edit
     end
@@ -74,7 +79,8 @@ class OrganizationsController < ApplicationController
       { phones: [] },
       :url,
       :status,
-      { languages: [] }
+      { languages: [] },
+      :tag_list
     )
   end
 end
