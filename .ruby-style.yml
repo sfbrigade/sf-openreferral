@@ -1,0 +1,3 @@
+MultilineOperationIndentation:
+  Enabled: true
+  EnforcedStyle: indented
