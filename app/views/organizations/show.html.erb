@@ -2,7 +2,9 @@
 
 <p>
   <strong>Tags:</strong>
-  <%= @organization.tag_list %>
+  <% @organization.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
 </p>
 
 <p>
