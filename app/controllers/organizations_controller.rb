@@ -1,6 +1,6 @@
 class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
-  before_action :set_organization_groups
+  before_action :set_organization_groups, :set_tags
 
   def index
     sidebar
@@ -43,11 +43,7 @@ class OrganizationsController < ApplicationController
   end
 
   def update
-    p params
-    @organization.tag_list.add(*params["organization"]["tags"])
-
-    if @organization.update(organization_params.except(:tags))
-
+    if @organization.update(organization_params)
       flash[:notice] = "#{@organization.name} was approved"
       render :show
     else
@@ -64,6 +60,10 @@ class OrganizationsController < ApplicationController
 
   def set_organization_groups
     @organization_groups = Organization.all.group_by(&:status)
+  end
+
+  def set_tags
+    @tags = ActsAsTaggableOn::Tag.all
   end
 
   def set_organization
