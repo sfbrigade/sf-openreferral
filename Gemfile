@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.2.2"
 
+gem "acts-as-taggable-on", "~> 3.4"
 gem "airbrake"
 gem "autoprefixer-rails"
 gem "bourbon", "~> 4.2.0"
@@ -24,7 +25,6 @@ gem "recipient_interceptor"
 gem "refills"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
-gem 'acts-as-taggable-on', '~> 3.4'
 gem "title"
 gem "uglifier"
 gem "unicorn"
@@ -38,14 +38,14 @@ end
 
 group :development, :test do
   gem "awesome_print"
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "bundler-audit", require: false
   gem "byebug"
   gem "dotenv-rails"
   gem "factory_girl_rails"
   gem "pry-rails"
   gem "rspec-rails", "~> 3.1.0"
-  gem "binding_of_caller"
-  gem "better_errors"
 end
 
 group :test do

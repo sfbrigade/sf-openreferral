@@ -17,20 +17,20 @@ module Features
 end
 
 RSpec.configure do |config|
+  config.include BackgroundJobs
+  config.include ControllerMacros, type: :controller
+  config.include Devise::TestHelpers, type: :controller
   config.include Features, type: :feature
   config.infer_base_class_for_anonymous_controllers = false
   config.infer_spec_type_from_file_location!
+  config.render_views
   config.use_transactional_fixtures = false
-  config.include Devise::TestHelpers, type: :controller
-  config.include ControllerMacros, type: :controller
 
   config.around(:each, type: :feature) do |example|
     run_background_jobs_immediately do
       example.run
     end
   end
-
-  config.include BackgroundJobs
 end
 
 ActiveRecord::Migration.maintain_test_schema!

@@ -44,8 +44,7 @@ class OrganizationsController < ApplicationController
 
   def update
     if @organization.update(organization_params)
-      flash[:notice] = "#{@organization.name} was approved"
-      render :show
+      redirect_to @organization, notice: t(".success")
     else
       render :edit
     end
@@ -74,13 +73,13 @@ class OrganizationsController < ApplicationController
     params.require(:organization).permit(
       :address,
       :description,
-      { emails: [] },
       :name,
-      { phones: [] },
-      :url,
+      :service_list,
       :status,
-      { languages: [] },
-      :tag_list
+      :url,
+      emails: [],
+      languages: [],
+      phones: [],
     )
   end
 end

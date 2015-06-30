@@ -1,6 +1,6 @@
 class Organization < ActiveRecord::Base
+  acts_as_taggable_on :services
   belongs_to :import
 
-  validates :name, :tag_list, presence: true
-  acts_as_taggable
+  validates :name, presence: true
 end

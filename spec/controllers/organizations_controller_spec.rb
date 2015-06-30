@@ -123,6 +123,26 @@ describe OrganizationsController do
 
         expect(flash[:notice]).to eq(t("organizations.update.success"))
       end
+
+      it "accepts a list of languages" do
+        organization = create(:organization)
+        attributes = { languages: ["English", "Spanish"] }
+
+        put :update, id: organization.to_param, organization: attributes
+
+        organization.reload
+        expect(organization.languages).to eq(["English", "Spanish"])
+      end
+
+      it "accepts a list of services" do
+        organization = create(:organization)
+        attributes = { service_list: "foo,bar,baz" }
+
+        put :update, id: organization.to_param, organization: attributes
+
+        organization.reload
+        expect(organization.service_list.sort).to eq(["bar", "baz", "foo"])
+      end
     end
 
     describe "with invalid params" do
