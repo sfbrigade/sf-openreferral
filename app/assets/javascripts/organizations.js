@@ -10,9 +10,15 @@ $(document).ready(function() {
   if (('.org-address').length >= 1 ) {
     displayMap($('.org-address').text());
   }
+
+  //not set to display none so that the page doesn't jump up
+  $('.flash-notice').delay(1000).animate({ opacity: 0 });
+  initTextArea();
 });
 
 $('#organization-content').on('pjax:success', function() {
+  initTextArea();
+
   if (('.org-address').length >= 1 ) {
     displayMap($('.org-address').text());
   }
@@ -59,4 +65,37 @@ function displayMap(address) {
       google.maps.Marker({ position: position, map: map });
     }
   });
+}
+
+//This makes the description field autosize to the size of the text content
+var observe;
+if (window.attachEvent) {
+  observe = function (element, event, handler) {
+    element.attachEvent('on'+event, handler);
+  };
+}
+else {
+  observe = function (element, event, handler) {
+    element.addEventListener(event, handler, false);
+  };
+}
+function initTextArea () {
+  var text = document.getElementById('organization_description');
+  function resize () {
+    text.style.height = 'auto';
+    text.style.height = text.scrollHeight+'px';
+  }
+  /* 0-timeout to get the already changed text */
+  function delayedResize () {
+    window.setTimeout(resize, 0);
+  }
+  observe(text, 'change',  resize);
+  observe(text, 'cut',     delayedResize);
+  observe(text, 'paste',   delayedResize);
+  observe(text, 'drop',    delayedResize);
+  observe(text, 'keydown', delayedResize);
+
+  text.focus();
+  text.select();
+  resize();
 }
