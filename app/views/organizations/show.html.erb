@@ -24,19 +24,16 @@
       <h2>Is this for me?</h2>
       <dl>
         <dt>Serves</dt>
-        <dd>Men, Women, ages 12-25, involved in criminal justice system.</dd>
+        <dd><%= @organization.demographics %></dd>
 
         <dt>Fees</dt>
-        <dd>None.</dd>
+        <dd><%= @organization.fees %></dd>
 
         <dt>Languages</dt>
         <dd><%= @organization.languages.join(", ") %></dd>
 
         <dt>Accessibility</dt>
-        <dd>Wheelchair</dd>
-
-        <dt>Faith Based</dt>
-        <dd>No</dd>
+        <dd><%= @organization.accessibility %></dd>
       </dl>
     </div>
   </div>

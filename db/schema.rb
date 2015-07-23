@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150627202822) do
+ActiveRecord::Schema.define(version: 20150723030631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,14 +60,17 @@ ActiveRecord::Schema.define(version: 20150627202822) do
     t.string   "name"
     t.text     "description"
     t.string   "address"
-    t.string   "phones",      default: [],        null: false, array: true
-    t.string   "emails",      default: [],        null: false, array: true
+    t.string   "phones",        default: [],        null: false, array: true
+    t.string   "emails",        default: [],        null: false, array: true
     t.string   "url"
-    t.string   "languages",   default: [],        null: false, array: true
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "status",      default: "pending", null: false
+    t.string   "languages",     default: [],        null: false, array: true
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "status",        default: "pending", null: false
     t.integer  "import_id"
+    t.string   "demographics"
+    t.string   "fees"
+    t.string   "accessibility"
   end
 
   create_table "taggings", force: :cascade do |t|

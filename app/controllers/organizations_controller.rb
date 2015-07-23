@@ -71,8 +71,11 @@ class OrganizationsController < ApplicationController
 
   def organization_params
     params.require(:organization).permit(
+      :accessibility,
       :address,
+      :demographics,
       :description,
+      :fees,
       :name,
       :service_list,
       :status,
