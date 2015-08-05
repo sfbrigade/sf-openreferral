@@ -46,6 +46,22 @@ is [purposefully excluded from the project's `Gemfile`][exclude].
 
 Visit [localhost:3000](http://localhost:3000/) to make sure it's running.
 
+## Data Import
+
+Data from the plaintext dump of APD's guidebook should be migrated into the
+database as part of the `./bin/setup` script. The data import is handled by
+Rails' `db/seeds.rb` file, and can be re-run with:
+
+```
+rake db:seed
+```
+
+If you ever need to reset the database, try:
+
+```
+rake db:drop db:setup db:seed
+```
+
 ## Guidelines
 
 Use the following guides for getting things done, programming well, and
@@ -88,5 +104,3 @@ Update `/config/database.yml` to have a username and password:
     username: postgres
     password: postgres
 ```
-
-
