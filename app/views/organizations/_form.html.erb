@@ -3,13 +3,16 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
+    <%= f.input :url %>
     <%= f.input :description %>
     <%= f.input :address %>
     <%= f.input :phones, as: :array %>
     <%= f.input :emails, as: :array %>
-    <%= f.input :url %>
     <%= f.input :languages, as: :array %>
     <%= f.input :service_list %>
+    <%= f.input :demographics %>
+    <%= f.input :fees %>
+    <%= f.input :accessibility %>
   </div>
 
   <div class="form-actions">
