@@ -10,9 +10,15 @@ $(document).ready(function() {
   if (('.org-address').length >= 1 ) {
     displayMap($('.org-address').text());
   }
+
+  //not set to display none so that the page doesn't jump up
+  $('.flash-notice').delay(1000).animate({ opacity: 0 });
+  initTextArea();
 });
 
 $('#organization-content').on('pjax:success', function() {
+  initTextArea();
+
   if (('.org-address').length >= 1 ) {
     displayMap($('.org-address').text());
   }

@@ -3,7 +3,7 @@
 <div class="container">
 
   <h1><%= @organization.name %></h1>
-  <div class="organization-url"><%= @organization.url %></div>
+  <div class="organization-url"><a target="_blank" href="<%= @organization.url %>"><%= @organization.url %></div></a>
 
   <div class="column">
     <div class="description section">
@@ -69,7 +69,7 @@
       </div>
 
       <div class="requirements subsection">
-        <h2>Bring</h2>
+        <h2>What to Bring</h2>
         <div>
           Proof of San Francisco Residency.
           Program will assist entering clients in getting this.
@@ -78,7 +78,7 @@
     </div>
 
     <div class="people section">
-      <h2>People</h2>
+      <h2>Contact Person</h2>
       <div class="person">
         <div class="name">Shirley Maciel</div>
         <div class="title">Director</div>
