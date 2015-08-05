@@ -78,11 +78,7 @@ class OrganizationParser
   end
 
   def languages
-    parse_into_list(labeled_field(:languages))
-  end
-
-  def parse_into_list(text)
-    text.to_s.split(/(\,|\band\b|\.)/).map(&:strip) - [",", "and", "."]
+    parse_english_list(labeled_field(:languages))
   end
 
   def miscellaneous
@@ -136,7 +132,7 @@ class OrganizationParser
   end
 
   def services
-    labeled_field(:services)
+    parse_semicolon_list(labeled_field(:services))
   end
 
   def url
@@ -160,5 +156,13 @@ class OrganizationParser
 
     result = matches.compact.first
     result && result.to_s.strip
+  end
+
+  def parse_english_list(text)
+    text.to_s.split(/(\,|\band\b|\.)/).map(&:strip) - [",", "and", "."]
+  end
+
+  def parse_semicolon_list(text)
+    text.to_s.split(/(?<=[a-zA-Z\)]{2})[;\.] */)
   end
 end
