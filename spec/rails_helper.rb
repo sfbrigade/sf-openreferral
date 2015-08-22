@@ -31,6 +31,10 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  config.before(:each, js: true) do
+    page.driver.block_unknown_urls
+  end
 end
 
 ActiveRecord::Migration.maintain_test_schema!

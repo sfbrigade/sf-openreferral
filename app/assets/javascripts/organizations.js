@@ -2,6 +2,30 @@ $(document).pjax('a.organization-link', '#organization-content', {push: true});
 $(document).pjax('a.edit-link-pjax', '#organization-content', {push: true});
 $(document).pjax('a.update-link-pjax', '#organization-content', {push: true});
 
+var closeOrgModal = function() {
+  $('.organization-modal').hide();
+  $('#organization-content').children().remove();
+  window.history.pushState({}, '', '/organizations');
+};
+var openOrgModal = function() { $('.organization-modal').show(); };
+
+$(function() {
+  var body = $('body');
+
+  if(body.attr('data-controller') == 'organizations') {
+    var show = body.attr('data-action');
+
+    if(show == 'index') {
+      closeOrgModal();
+    } else {
+      openOrgModal();
+    }
+  }
+});
+
+$(document).on('click', 'a.close-organization-modal', closeOrgModal);
+$(document).on('click', 'a.organization-link', openOrgModal);
+
 $(document).on('submit', '#edit-form form', function(event) {
   $.pjax.submit(event, '#organization-content', {push: false});
 });

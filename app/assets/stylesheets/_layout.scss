@@ -12,3 +12,12 @@ body {
 .hidden {
   display: none;
 }
+
+.sidebar-container {
+  @include span-columns(3 of 12);
+}
+
+.main {
+  @include span-columns(9 of 12);
+  @include omega;
+}

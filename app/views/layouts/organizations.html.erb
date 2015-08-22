@@ -15,20 +15,30 @@
   <%= stylesheet_link_tag :application, media: "all" %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= body_class %>">
+<body data-controller="<%=controller.controller_name%>"
+      data-action="<%=controller.action_name%>"
+      >
   <%= render "navigation" %>
   <%= render "flashes" -%>
 
-  <div class="content <%= body_class %>">
+  <div class="content">
     <div class="sidebar-container" id="sidebar-pjax-container">
       <%= render template: 'organizations/sidebar' %>
     </div>
-    <div class="main organization-main">
+
+    <div class="main">
       <div class="organization-actions">
         <%= link_to 'New Organization', new_organization_path %>
       </div>
 
-      <div class="details organization-details" id="organization-content">
+      <div class="organization-list">
+        <%= render "organizations/index" %>
+      </div>
+    </div>
+
+    <div class="organization-modal">
+      <a href="#" class="close-organization-modal">Close</a>
+      <div id="organization-content" class="organization-details">
         <%= yield %>
       </div>
     </div>

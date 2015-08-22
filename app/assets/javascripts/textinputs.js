@@ -7,7 +7,10 @@ function initTextArea () {
   var $text = $('#organization_description');
   function resize () {
     $text.height( 'auto' );
-    $text.height( $('textarea')[0].scrollHeight );
+    var textareas = $('textarea');
+    if(textareas.length) {
+      $text.height(textareas[0].scrollHeight);
+    }
   }
   /* 0-timeout to get the already changed text */
   function delayedResize () {

@@ -1,9 +1,8 @@
 class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
-  before_action :set_organization_groups, :set_tags
+  before_action :set_organizations, :set_tags
 
   def index
-    sidebar
   end
 
   def pending
@@ -17,9 +16,6 @@ class OrganizationsController < ApplicationController
   end
 
   def sidebar
-    @organization_groups = Organization.
-      order(status: :desc, name: :asc).
-      group_by(&:status)
   end
 
   def show
@@ -57,8 +53,8 @@ class OrganizationsController < ApplicationController
 
   private
 
-  def set_organization_groups
-    @organization_groups = Organization.all.group_by(&:status)
+  def set_organizations
+    @organizations = Organization.order(status: :desc, name: :asc)
   end
 
   def set_tags

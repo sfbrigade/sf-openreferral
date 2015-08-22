@@ -7,25 +7,4 @@
     <h2>Tags</h2>
     <%= render @tags %>
   </div>
-
-  <% @organization_groups.each do |status, group| %>
-    <div class="organization-category"%>
-      <h2><%= status.titleize %> Records (<%= group.count %>)</h2>
-    </div>
-
-    <ul class="organization-list">
-      <% group.each do |organization| %>
-        <%= content_tag(:li, class: "organization-listing organization-#{
-            organization.valid? ? "valid" : "invalid"
-        }") do %>
-          <%= link_to(
-            organization.name,
-            organization,
-            remote: true,
-            class: 'organization-link'
-          ) %>
-        <% end %>
-      <% end %>
-    </ul>
-  <% end %>
 </div>
