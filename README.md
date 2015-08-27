@@ -70,4 +70,12 @@ You don't have postgres installed. TODO: find link.
 
 ### Ruby env out of date / not installed
 
-[installing ruby on Ubunut](https://gorails.com/setup/ubuntu/14.04)
+[Install ruby on Ubunut](https://gorails.com/setup/ubuntu/14.04)
+
+### Missing psql
+
+[Install postgresql on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-14-04)
+
+### Error: PG::ConnectionBad: fe_sendauth: no password supplied
+
+TBD
