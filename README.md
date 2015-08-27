@@ -52,3 +52,22 @@ programming in style.
 * [Protocol](http://github.com/thoughtbot/guides/blob/master/protocol)
 * [Best Practices](http://github.com/thoughtbot/guides/blob/master/best-practices)
 * [Style](http://github.com/thoughtbot/guides/blob/master/style)
+
+
+## Env Setup FAQ
+
+### Error: Command 'qmake ' not available
+
+Common fix on macs: `brew install qt`
+
+Otherwise try: [installing capybara-webkit](https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit)
+
+
+### Error: No pg_config... trying anyway.
+
+You don't have postgres installed. TODO: find link.
+
+
+### Ruby env out of date / not installed
+
+[installing ruby on Ubunut](https://gorails.com/setup/ubuntu/14.04)
