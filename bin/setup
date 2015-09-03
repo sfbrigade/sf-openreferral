@@ -34,3 +34,5 @@ fi
 # Only if this isn't CI
 # if [ -z "$CI" ]; then
 # fi
+
+printf 'Successfuly reached the end of the setup file.'
