@@ -9,6 +9,7 @@ feature "Admin views organization" do
     visit organizations_path
     expect(page).not_to have_organization_modal
     expect_persistant_url
+    Percy::Capybara.snapshot(page, name: "organization list")
   end
 
   scenario "admin opens organization in a modal", :js do
@@ -20,6 +21,7 @@ feature "Admin views organization" do
     click_on organization.name
     expect(page).to have_organization_modal(organization)
     expect_persistant_url
+    Percy::Capybara.snapshot(page, name: "organization details modal")
   end
 
   scenario "admin hides modal", :js do

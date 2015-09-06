@@ -53,6 +53,7 @@ group :test do
   gem "database_cleaner"
   gem "formulaic"
   gem "launchy"
+  gem "percy-capybara"
   gem "shoulda-matchers", require: false
   gem "simplecov", require: false
   gem "timecop"

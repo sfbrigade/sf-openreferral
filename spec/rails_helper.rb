@@ -2,9 +2,10 @@ ENV["RAILS_ENV"] = "test"
 
 require File.expand_path("../../config/environment", __FILE__)
 
+require "devise"
+require "percy/capybara/rspec"
 require "rspec/rails"
 require "shoulda/matchers"
-require "devise"
 
 Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |file| require file }
 
@@ -34,6 +35,10 @@ RSpec.configure do |config|
 
   config.before(:each, js: true) do
     page.driver.block_unknown_urls
+  end
+
+  config.before(:suite) do
+    Percy.config.access_token = ENV.fetch("PERCY_TOKEN")
   end
 end
 
