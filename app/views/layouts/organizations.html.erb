@@ -37,9 +37,11 @@
     </div>
 
     <div class="organization-modal">
-      <a href="#" class="close-organization-modal">Close</a>
-      <div id="organization-content" class="organization-details">
-        <%= yield %>
+      <div class="organization-modal__contents">
+        <a href="#" class="close-organization-modal">Close</a>
+        <div id="organization-content" class="organization-details">
+          <%= yield %>
+        </div>
       </div>
     </div>
   </div>

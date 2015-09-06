@@ -1,0 +1,29 @@
+.organization-modal {
+  background-color: $white;
+  left: 0;
+  margin: $base-spacing $base-spacing*4;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+
+  &:before {
+    background-color: $black;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  &__contents {
+    background-color: $white;
+    box-shadow: 0 0 6px rgba($black, 0.3);
+    overflow: hidden;
+    padding: $base-spacing;
+    z-index: 3;
+  }
+}

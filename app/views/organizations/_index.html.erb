@@ -1,14 +1,17 @@
-<ul class="organization-list">
+<div class="organization-list">
 <% @organizations.each do |organization| %>
-  <%= content_tag(:li, class: "organization-listing organization-#{
-            organization.valid? ? "valid" : "invalid"
-  }") do %>
-  <%= link_to(
-    organization.name,
-    organization,
-    remote: true,
-    class: 'organization-link'
-  ) %>
-  <% end %>
+  <div class="organization-summary organization-summary--<%=organization.valid_status%>">
+    <%= link_to(
+      organization.name,
+      organization,
+      remote: true,
+      class: "organization-summary__details-link",
+    ) %>
+    <%= link_to(
+      organization.url,
+      organization.url,
+      class: "organization-summary__url",
+    ) %>
+  </div>
 <% end %>
 </ul>

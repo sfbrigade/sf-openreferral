@@ -1,0 +1,18 @@
+@mixin earmark($color, $size) {
+  &:before {
+    $border-transparent: $size solid rgba(0, 0, 0, 0);
+    $border-colored: $size solid $color;
+
+    border: $border-colored;
+    border-bottom: $border-transparent;
+    border-right: $border-transparent;
+
+    content: "";
+    display: block;
+    height: $size;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: $size;
+  }
+}

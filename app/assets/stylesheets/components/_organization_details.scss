@@ -1,0 +1,30 @@
+.organization-details {
+  .section {
+    border-top: $base-border;
+    margin-top: $base-spacing;
+    padding-top: $base-spacing / 2;
+
+    &.location {
+      border: $base-border;
+      padding: $base-spacing / 2;
+    }
+  }
+
+  .subsection {
+    margin-top: $base-spacing;
+  }
+
+  .column {
+    @include span-columns(4.5 of 9);
+
+    &:last-child {
+      @include omega;
+    }
+  }
+
+  .map {
+    @include fill-parent;
+    height: 20em;
+    margin-bottom: $base-spacing;
+  }
+}
