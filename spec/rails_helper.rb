@@ -38,7 +38,7 @@ RSpec.configure do |config|
   end
 
   config.before(:suite) do
-    Percy.config.access_token = ENV.fetch("PERCY_TOKEN")
+    Percy.config.access_token = ENV["PERCY_TOKEN"]
   end
 end
 
