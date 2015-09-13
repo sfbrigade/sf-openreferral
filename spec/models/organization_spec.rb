@@ -7,6 +7,16 @@ describe Organization do
 
   describe "validations" do
     it { should validate_presence_of(:name) }
+
+    context "on verification" do
+      it "validates that the service belongs to the taxonomy" do
+        org = create(:organization, service_list: ["not in taxonomy"])
+
+        validity = org.validate(:verification)
+
+        expect(validity).to be false
+      end
+    end
   end
 
   describe "#emails" do

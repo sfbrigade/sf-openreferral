@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.pjax
+//= require selectize
 //= require_tree .

@@ -73,12 +73,12 @@ class OrganizationsController < ApplicationController
       :description,
       :fees,
       :name,
-      :service_list,
       :status,
       :url,
       emails: [],
       languages: [],
       phones: [],
+      service_ids: [],
     )
   end
 end

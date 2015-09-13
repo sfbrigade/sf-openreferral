@@ -1,15 +1,20 @@
 require "importer"
+require "service_taxonomy"
 
 ActsAsTaggableOn::Tag.destroy_all
 Admin.destroy_all
 Organization.destroy_all
+
+ServiceTaxonomy.new("lib/taxonomy/human_services.yml").all.each do |service|
+  ActsAsTaggableOn::Tag.create(name: service)
+end
 
 source = File.read("db/seeds/getting_out_staying_out.dump.txt")
 importer = PlainTextImporter.new(source)
 data = importer.as_json
 
 data[:organizations].each do |org|
-  Organization.create(
+  org = Organization.new(
     name: org[:name],
     description: org[:description],
     url: org[:url],
@@ -26,6 +31,8 @@ data[:organizations].each do |org|
     # org[:faith_based],
     service_list: org[:services],
   )
+
+  org.save(validate: false)
 end
 
 admins = YAML.load_file("db/seeds/admins.yml")
