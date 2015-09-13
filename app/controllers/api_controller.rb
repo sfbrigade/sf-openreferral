@@ -1,7 +1,8 @@
 require "json"
 class ApiController < ApplicationController
   include ApiHelper
-  SUPPORTED_FORMATS = ["markdown","docx","json"]
+  SUPPORTED_FORMATS = ["markdown","json"]
+
   def export_all
     response_data = Organization.all.to_a
     respond_to_format(response_data, "all")
@@ -16,13 +17,6 @@ class ApiController < ApplicationController
   def respond_to_format(response_data, filename)
     respond_to do |format|
       format.json { render json: response_data }
-
-      format.docx do
-        send_data(
-          export_organizations_as_docx(response_data),
-          filename: "#{filename}.docx",
-        )
-      end
 
       format.markdown do
         render text: export_organizations_as_markdown(response_data)

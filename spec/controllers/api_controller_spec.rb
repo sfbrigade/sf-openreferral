@@ -14,9 +14,7 @@ RSpec.describe ApiController, :type => :controller do
   it "returns suppoprted formats" do
     get :export_formats
 
-    expect(response_json).to include("markdown")
-    expect(response_json).to include("docx")
-    expect(response_json).to include("json")
+    expect(response_json).to match_array(["markdown", "json"])
   end
 
   describe "export" do
@@ -48,15 +46,6 @@ RSpec.describe ApiController, :type => :controller do
 
       expect(response.body).to include("# organization markdown")
       expect(response.body).to include("# organization 2")
-    end
-
-    it "exports all docx" do
-      create(:organization, name: "organization docx")
-
-      get :export_all, format: "docx"
-
-      expect(response.body).not_to be_nil
-      expect(response.headers["Content-Disposition"]).to include(".docx")
     end
 
     it "requires format argument" do
