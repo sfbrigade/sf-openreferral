@@ -35,4 +35,11 @@ fi
 # if [ -z "$CI" ]; then
 # fi
 
+command -v pandoc >/dev/null 2>&1 ||
+  {
+    echo >&2 "I require pandoc but it's not installed. Aborting.";
+    echo >&2 "See http://pandoc.org/";
+    exit 1;
+  }
+
 printf 'Successfuly reached the end of the setup file.'
