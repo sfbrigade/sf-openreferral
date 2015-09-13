@@ -3,7 +3,7 @@ require "rails_helper"
 feature "Admin views organization" do
   scenario "admin does not see organization details initially", :js do
     admin = create(:admin)
-    create(:organization)
+    create(:organization, name: "Org")
     login_as(admin, scope: :admin)
 
     visit organizations_path
@@ -14,7 +14,7 @@ feature "Admin views organization" do
 
   scenario "admin opens organization in a modal", :js do
     admin = create(:admin)
-    organization = create(:organization)
+    organization = create(:organization, name: "Org")
     login_as(admin, scope: :admin)
 
     visit organizations_path
