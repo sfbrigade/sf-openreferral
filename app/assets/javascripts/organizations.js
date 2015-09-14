@@ -80,15 +80,17 @@ function displayMap(address) {
     dataType: 'json',
     type: 'get',
     success: function(data) {
-      var location = data.results[0].geometry.location;
-      var position = new google.maps.LatLng(location.lat, location.lng);
+      if(data.results.length) {
+        var location = data.results[0].geometry.location;
+        var position = new google.maps.LatLng(location.lat, location.lng);
 
-      var map = new google.maps.Map(
-        document.getElementById('map-canvas'),
-        { zoom: 15, center: position }
-      );
+        var map = new google.maps.Map(
+            document.getElementById('map-canvas'),
+            { zoom: 15, center: position }
+            );
 
-      google.maps.Marker({ position: position, map: map });
+        google.maps.Marker({ position: position, map: map });
+      }
     }
   });
 }
