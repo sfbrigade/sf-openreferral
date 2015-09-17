@@ -11,7 +11,5 @@ Rails.application.routes.draw do
   resources :organizations
   resources :tags, only: [:show]
 
-  resources :imports, only: [:create, :new, :show]
-
   root to: "organizations#index"
 end
