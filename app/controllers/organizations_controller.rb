@@ -1,6 +1,6 @@
 class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
-  before_action :set_organizations, :set_tags
+  before_action :set_organizations
 
   def index
   end
@@ -57,10 +57,6 @@ class OrganizationsController < ApplicationController
     @organizations = Organization.order(status: :desc, name: :asc)
   end
 
-  def set_tags
-    @tags = ActsAsTaggableOn::Tag.all
-  end
-
   def set_organization
     @organization = Organization.find(params[:id])
   end
@@ -78,7 +74,6 @@ class OrganizationsController < ApplicationController
       emails: [],
       languages: [],
       phones: [],
-      service_ids: [],
     )
   end
 end

@@ -1,13 +1,7 @@
 require "importer"
-require "service_taxonomy"
 
-ActsAsTaggableOn::Tag.destroy_all
 Admin.destroy_all
 Organization.destroy_all
-
-ServiceTaxonomy.new("lib/taxonomy/human_services.yml").all.each do |service|
-  ActsAsTaggableOn::Tag.create(name: service)
-end
 
 source = File.read("db/seeds/getting_out_staying_out.dump.txt")
 importer = PlainTextImporter.new(source)
@@ -29,7 +23,6 @@ data[:organizations].each do |org|
     fees: org[:fees],
     # org[:eligible_population],
     # org[:faith_based],
-    service_list: org[:services],
   )
 
   org.save(validate: false)

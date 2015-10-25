@@ -2,7 +2,6 @@ source "https://rubygems.org"
 
 ruby "2.2.2"
 
-gem "acts-as-taggable-on", "~> 3.4"
 gem "airbrake"
 gem "autoprefixer-rails"
 gem "bourbon", "~> 4.2.0"

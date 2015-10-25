@@ -133,17 +133,6 @@ describe OrganizationsController do
         organization.reload
         expect(organization.languages).to eq(["English", "Spanish"])
       end
-
-      it "accepts a list of service ids" do
-        organization = create(:organization)
-        service = ActsAsTaggableOn::Tag.create(name: "service")
-        attributes = { service_ids: [service.id] }
-
-        put :update, id: organization.to_param, organization: attributes
-
-        organization.reload
-        expect(organization.service_list.sort).to eq(["service"])
-      end
     end
 
     describe "with invalid params" do

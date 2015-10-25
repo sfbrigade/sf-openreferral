@@ -36,8 +36,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (3.5.0)
-      activerecord (>= 3.2, < 5)
     addressable (2.3.8)
     airbrake (4.2.1)
       builder
@@ -162,7 +160,6 @@ GEM
       mini_portile (~> 0.6.0)
     normalize-rails (3.0.3)
     orm_adapter (0.5.0)
-    pandoc-ruby (1.0.0)
     percy-capybara (0.4.8)
       percy-client (>= 0.3.1)
     percy-client (0.3.1)
@@ -299,7 +296,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on (~> 3.4)
   airbrake
   autoprefixer-rails
   awesome_print
@@ -325,7 +321,6 @@ DEPENDENCIES
   neat (~> 1.7.0)
   newrelic_rpm (>= 3.9.8)
   normalize-rails (~> 3.0.0)
-  pandoc-ruby
   percy-capybara
   pg
   pjax_rails
