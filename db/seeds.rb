@@ -16,7 +16,7 @@ data[:organizations].each do |org|
     phones: [org[:phone]],
     # org[:fax: null,
     emails: [org[:email]],
-    # org[:miscellaneous],
+    miscellaneous: org[:miscellaneous],
     languages: org[:languages],
     # org[:what_to_bring],
     accessibility: org[:accessibility],
