@@ -1,3 +1,7 @@
+# NOTE: work on this repo is suspended in favor of a new approach
+
+New approach: we are now building on top of Zendesk's [link-sf project](https://github.com/zendesk/linksf).
+
 # SF Social Services Open Referral
 
 SF Open Referral is working
