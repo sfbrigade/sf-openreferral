@@ -1,7 +1,7 @@
 # SF Social Services Open Referral
 
 SF Open Referral is working
-with the San Francisco Adult Probation Department (APD)
+with several local government agencies
 to collect, maintain, and publish
 information about social services in San Francisco.
 
