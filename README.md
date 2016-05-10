@@ -1,6 +1,6 @@
 #NOTE: This repo is no longer under development or being maintained. Information is for reference purposes only.
 
-### NOTE: work on this repo is suspended in favor of a new approach
+Work on this repo is suspended in favor of a new approach:
 
 New approach: we are now building on top of Zendesk's [link-sf project](https://github.com/zendesk/linksf).
 
