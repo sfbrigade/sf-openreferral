@@ -1,8 +1,8 @@
-#NOTE: This repo is no longer under development or being maintained. Information is for reference purposes only.
+#DEPRECATED: This repo is no longer under development or being maintained. Information is for reference purposes only.
 
-Work on this repo is suspended in favor of a new approach:
-
-New approach: we are now building on top of Zendesk's [link-sf project](https://github.com/zendesk/linksf).
+Work on this repo is suspended in favor of a new approach. Please visit our new repo at https://github.com/sfbrigade/lighten
+ 
+ <hr> <hr> <hr>
 
 ## SF Social Services Open Referral
 
